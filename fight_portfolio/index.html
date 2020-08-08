@@ -90,6 +90,9 @@
         <a :href="blogPath" target="_blank">
           <i class="devicon-wordpress-plain colored blog-icon"></i>
         </a>
+        <a :href="qiitaPath" target="_blank">
+          <i class="qiita-icon" style="color: #59bb0c;">Qiita</i>
+        </a>
       </div>
       <p class="copylight inview-from-the-bottom-delay">&copy;2020 sukeo</p>
       <h1 class="convery-message inview-from-the-bottom-delay">I like making things</h1>
@@ -197,7 +200,8 @@
       return {
         twitterPath: 'https://twitter.com/sukeo_sukeo',
         gitPath: 'https://github.com/sukeo-stack',
-        blogPath: 'https://kichintodqmsl.wordpress.com'
+        blogPath: 'https://kichintodqmsl.wordpress.com',
+        qiitaPath: 'https://qiita.com/yusuke4522'
       }
     },
     mounted: function() {
@@ -283,7 +287,7 @@
           el.classList.add('icon-move')
           setInterval(() => {
             el.style.zIndex = this.rand(-1, 1)
-          }, this.rand(5000, 10000))
+          }, this.rand(4000, 8000))
         })
     }
   }
