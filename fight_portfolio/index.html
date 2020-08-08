@@ -249,6 +249,7 @@
     template: '#study-page',
     data: function() {
       return {
+        // メインスキルは８個まで（スマホサイズの一画面に収めるため）
         deviconNomal: [
           {id: 1, path: 'devicon-html5-plain-wordmark', since: '2019.12'},
           {id: 2, path: 'devicon-css3-plain-wordmark', since: '2019.12'},
@@ -269,8 +270,11 @@
           {id: 109, path: 'devicon-mongodb-plain-wordmark colored', since: '2020.06'},
           {id: 110, path: 'devicon-vuejs-plain-wordmark colored', since: '2020.07'}
         ],
-        diviconOther: [
-          {id: 201, path: 'devicon-sass-original', since: '2020.02'},
+        // 追加スキルはここに記述（画面サイズ５００px以上のときに追加されます）
+        deviconOtherNomal: [
+          {id: 201, path: 'devicon-sass-original', since: '2020.02'}
+        ],
+        deviconOtherColor: [
           {id: 202, path: 'devicon-sass-original colored', since: '2020.02'}
         ]
       }
@@ -278,6 +282,17 @@
     methods: {
       rand: function(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+    },
+    created: function() {
+      if (screen.width >= 500) {
+        console.log('500以上です');
+        this.deviconOtherNomal.forEach(item => {
+          this.deviconNomal.push(item)
+        })
+        this.deviconOtherColor.forEach(item => {
+          this.deviconColor.push(item)
+        })
       }
     },
     mounted: function() {
