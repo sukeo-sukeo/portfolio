@@ -281,14 +281,14 @@
       }
     },
     mounted: function() {
-        const els = document.querySelectorAll('[class^=devicon-]')
-        els.forEach(el => {
-          el.style.transform = `translate(${this.rand(-100, 100)}%, ${this.rand(-100, 100)}%)`
-          el.classList.add('icon-move')
-          setInterval(() => {
-            el.style.zIndex = this.rand(-1, 1)
-          }, this.rand(4000, 8000))
-        })
+      const els = document.querySelectorAll('[class^=devicon-]')
+      els.forEach(el => {
+        el.style.transform = `translate(${this.rand(-100, 100)}%, ${this.rand(-100, 100)}%)`
+        el.classList.add('icon-move')
+        setInterval(() => {
+          el.style.zIndex = this.rand(-1, 1)
+        }, this.rand(4000, 8000))
+      })
     }
   }
 
